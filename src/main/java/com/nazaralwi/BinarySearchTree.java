@@ -132,4 +132,12 @@ public class BinarySearchTree {
             return temp;
         }
     }
+
+    public void remove(int input) {
+        if (this.remove(input, root) == null) {
+            System.out.printf("Data " + input + " doesn't exist");
+        } else {
+            root = remove(input, root);
+        }
+    }
 }
