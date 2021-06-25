@@ -95,4 +95,13 @@ public class BinarySearchTree {
         }
         return false;
     }
+
+    void removeAll() {
+        if (isEmpty()) {
+            System.out.println("Tree is empty!");
+        } else {
+            root = null;
+            System.out.println("Data has been deleted");
+        }
+    }
 }
