@@ -23,7 +23,7 @@ public class BinarySearchTree {
                     temp = temp.right;
                     flag = true;
                 } else {
-                    System.out.printf("Duplicate data not allowed");
+                    System.out.println("Duplicate data not allowed");
                     break;
                 }
             }
@@ -149,10 +149,10 @@ public class BinarySearchTree {
                 Node temp = root;
                 while (temp != null) {
                     if (input > temp.data) {
-                        System.out.println(temp.data + ", ");
+                        System.out.print(temp.data + ", ");
                         temp = temp.right;
                     } else if (input < temp.data) {
-                        System.out.println(temp.data + ", ");
+                        System.out.print(temp.data + ", ");
                         temp = temp.left;
                     } else {
                         System.out.println(input);
