@@ -57,4 +57,16 @@ public class BinarySearchTree {
             System.out.printf("Data not found!");
         }
     }
+
+    Node findMax() {
+        Node temp = root;
+        if (isEmpty()) {
+            return null;
+        } else {
+            while (temp.right != null) {
+                temp = temp.right;
+            }
+            return temp;
+        }
+    }
 }
