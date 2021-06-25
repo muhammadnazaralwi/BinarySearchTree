@@ -37,4 +37,24 @@ public class BinarySearchTree {
             }
         }
     }
+
+    void find(int data) {
+        Node temp = root;
+        boolean checked = false;
+        while (temp != null) {
+            if (data < temp.data) {
+                temp = temp.left;
+            } else if (data > temp.data) {
+                temp = temp.right;
+            } else if (data == temp.data) {
+                checked = true;
+                break;
+            }
+        }
+        if (checked) {
+            System.out.printf(data + " found!");
+        } else {
+            System.out.printf("Data not found!");
+        }
+    }
 }
