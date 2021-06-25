@@ -81,4 +81,18 @@ public class BinarySearchTree {
             return temp;
         }
     }
+
+    private boolean checking(int input) {
+        Node temp = root;
+        while (temp != null) {
+            if (input < temp.data) {
+                temp = temp.left;
+            } else if (input > temp.data) {
+                temp = temp.right;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
 }
