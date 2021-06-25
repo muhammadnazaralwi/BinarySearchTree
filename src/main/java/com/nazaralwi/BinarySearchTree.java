@@ -140,4 +140,28 @@ public class BinarySearchTree {
             root = remove(input, root);
         }
     }
+
+    void findDirectory(int input) {
+        if (isEmpty()) {
+            System.out.println("Tree is empty!");
+        } else {
+            if (this.checking(input)) {
+                Node temp = root;
+                while (temp != null) {
+                    if (input > temp.data) {
+                        System.out.println(temp.data + ", ");
+                        temp = temp.right;
+                    } else if (input < temp.data) {
+                        System.out.println(temp.data + ", ");
+                        temp = temp.left;
+                    } else {
+                        System.out.println(input);
+                        break;
+                    }
+                }
+            } else {
+                System.out.printf("There is no data!");
+            }
+        }
+    }
 }
