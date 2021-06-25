@@ -104,4 +104,32 @@ public class BinarySearchTree {
             System.out.println("Data has been deleted");
         }
     }
+
+    private Node remove(int input, Node temp) {
+        if (temp == null) {
+            return null;
+        } else {
+            if (this.checking(input)) {
+                if (input < temp.data) {
+                    temp.left = remove(input, temp.left);
+                } else {
+                    if (input > temp.data) {
+                        temp.right = remove(input, temp.right);
+                    } else {
+                        if (temp.left != null && temp.right != null) {
+                            temp.data = temp.right.data;
+                            this.findMin();
+                            temp.right = remove(temp.data, temp.right);
+                        } else {
+                            temp = (temp.left != null) ? temp.left : temp.right;
+                            System.out.println("Data " + input + " has been deleted");
+                        }
+                    }
+                }
+            } else {
+                return null;
+            }
+            return temp;
+        }
+    }
 }
