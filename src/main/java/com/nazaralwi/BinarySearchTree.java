@@ -69,4 +69,16 @@ public class BinarySearchTree {
             return temp;
         }
     }
+
+    Node findMin() {
+        Node temp = root;
+        if (isEmpty()) {
+            return null;
+        } else {
+            while (temp.left != null) {
+                temp = temp.left;
+            }
+            return temp;
+        }
+    }
 }
