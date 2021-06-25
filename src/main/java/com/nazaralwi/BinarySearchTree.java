@@ -164,4 +164,18 @@ public class BinarySearchTree {
             }
         }
     }
+
+    public  int getLeafCount() {
+        return this.getLeafCountHelper(root);
+    }
+
+    private int getLeafCountHelper(Node data) {
+        if (data == null) {
+            return 0;
+        } else if (data.left == null && data.right == null) {
+            return 1;
+        } else {
+            return this.getLeafCountHelper(data.left) + this.getLeafCountHelper(data.right);
+        }
+    }
 }
