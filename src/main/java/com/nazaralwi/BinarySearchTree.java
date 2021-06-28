@@ -108,37 +108,34 @@ public class BinarySearchTree {
     private Node remove(int input, Node temp) {
         if (temp == null) {
             return null;
-        } else {
-            if (this.checking(input)) {
-                if (input < temp.data) {
-                    temp.left = remove(input, temp.left);
-                } else {
-                    if (input > temp.data) {
-                        temp.right = remove(input, temp.right);
-                    } else {
-                        if (temp.left != null && temp.right != null) {
-                            temp.data = temp.right.data;
-                            this.findMin();
-                            temp.right = remove(temp.data, temp.right);
-                        } else {
-                            temp = (temp.left != null) ? temp.left : temp.right;
-                            System.out.println("Data " + input + " has been deleted");
-                        }
-                    }
-                }
-            } else {
+        }
+
+        if (input == temp.data) {
+            if (temp.left == null && temp.right == null) {
                 return null;
             }
-            return temp;
+
+            if (temp.left == null) {
+                return temp.right;
+            }
+
+            if (temp.right == null) {
+                return temp.left;
+            }
+
+            temp.data = temp.right.data;
+            temp.right = remove(temp.data, temp.right);
+        } else if (input < temp.data) {
+            temp.left = remove(input, temp.left);
+        } else {
+            temp.right = remove(input, temp.right);
         }
+
+        return temp;
     }
 
     public void remove(int input) {
-        if (this.remove(input, root) == null) {
-            System.out.printf("Data " + input + " doesn't exist");
-        } else {
-            root = remove(input, root);
-        }
+        root = remove(input, root);
     }
 
     void findDirectory(int input) {
