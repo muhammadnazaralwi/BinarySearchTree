@@ -191,4 +191,19 @@ public class BinarySearchTree {
     void printPreorder() {
         printPreorder(root);
     }
+
+    void printInorder(Node node) {
+        if (node == null) {
+            return;
+        }
+        printInorder(node.left);
+
+        System.out.print(node.data + " ");
+
+        printInorder(node.right);
+    }
+
+    void printInorder() {
+        printInorder(root);
+    }
 }
