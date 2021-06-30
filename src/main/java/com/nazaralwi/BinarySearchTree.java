@@ -52,9 +52,9 @@ public class BinarySearchTree {
             }
         }
         if (checked) {
-            System.out.printf(data + " found!");
+            System.out.println(data + " found!");
         } else {
-            System.out.printf("Data not found!");
+            System.out.println("Data not found!");
         }
     }
 
@@ -101,7 +101,7 @@ public class BinarySearchTree {
             System.out.println("Tree is empty!");
         } else {
             root = null;
-            System.out.println("Data has been deleted");
+            System.out.println("Delete all data succeed");
         }
     }
 
@@ -136,6 +136,7 @@ public class BinarySearchTree {
 
     public void remove(int input) {
         root = remove(input, root);
+        System.out.println("Delete data " + input + " succeed");
     }
 
     void findDirectory(int input) {
@@ -157,7 +158,7 @@ public class BinarySearchTree {
                     }
                 }
             } else {
-                System.out.printf("There is no data!");
+                System.out.println("There is no data!");
             }
         }
     }
