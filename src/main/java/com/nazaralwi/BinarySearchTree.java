@@ -177,7 +177,7 @@ public class BinarySearchTree {
         }
     }
 
-    void printPreorder(Node node) {
+    private void printPreorder(Node node) {
         if (node == null) {
             return;
         }
@@ -189,11 +189,12 @@ public class BinarySearchTree {
         printPreorder(node.right);
     }
 
-    void printPreorder() {
+    public void printPreorder() {
         printPreorder(root);
+        System.out.println();
     }
 
-    void printInorder(Node node) {
+    private void printInorder(Node node) {
         if (node == null) {
             return;
         }
@@ -204,11 +205,12 @@ public class BinarySearchTree {
         printInorder(node.right);
     }
 
-    void printInorder() {
+    public void printInorder() {
         printInorder(root);
+        System.out.println();
     }
 
-    void printPostorder(Node node) {
+    private void printPostorder(Node node) {
         if (node == null) {
             return;
         }
@@ -220,7 +222,8 @@ public class BinarySearchTree {
         System.out.print(node.data + " ");
     }
 
-    void printPostorder() {
+    public void printPostorder() {
         printPostorder(root);
+        System.out.println();
     }
 }
