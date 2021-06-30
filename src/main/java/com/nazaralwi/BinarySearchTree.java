@@ -206,4 +206,20 @@ public class BinarySearchTree {
     void printInorder() {
         printInorder(root);
     }
+
+    void printPostorder(Node node) {
+        if (node == null) {
+            return;
+        }
+
+        printPostorder(node.left);
+
+        printPostorder(node.right);
+
+        System.out.print(node.data + " ");
+    }
+
+    void printPostorder() {
+        printPostorder(root);
+    }
 }
