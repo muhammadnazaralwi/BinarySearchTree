@@ -175,4 +175,20 @@ public class BinarySearchTree {
             return this.getLeafCountHelper(data.left) + this.getLeafCountHelper(data.right);
         }
     }
+
+    void printPreorder(Node node) {
+        if (node == null) {
+            return;
+        }
+
+        System.out.print(node.data + " ");
+
+        printPreorder(node.left);
+
+        printPreorder(node.right);
+    }
+
+    void printPreorder() {
+        printPreorder(root);
+    }
 }
